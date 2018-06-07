@@ -1,0 +1,15 @@
+#startup{
+    position: absolute;
+    top: 33.33%;
+    left: 33.33%;
+    width: 300px;
+    text-align: center;
+}
+
+#startup img {
+    margin-bottom: 30px;
+}
+
+.hide{
+    display:none;
+}

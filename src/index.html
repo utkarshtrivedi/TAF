@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <title>Wipro TAF: Automate Away</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.purple-deep_purple.min.css" />
+  <link href="index.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <div id="startup">
+    <img src="https://news.wiprodigital.com/hubfs/Branded-Items/wipro-esig.gif" />
+    <!-- Simple MDL Progress Bar -->
+    <div id="p1" class="mdl-progress mdl-js-progress"></div>
+  </div>
+
+  <div id="screen1" class="hide">
+    <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">T.A.F</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Your content goes here -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('#p1').addEventListener('mdl-componentupgraded', function () {
+      var progress = 0;
+      var interval = setInterval(function () {
+        progress += Math.floor(Math.random() * 100);
+        if (progress > 100) {
+          clearInterval(interval);
+          screen1();
+        }
+        this.MaterialProgress.setProgress(progress);
+      }.bind(this), 1000)
+
+    });
+
+    function screen1() {
+      document.querySelector('#startup').className = "hide"
+      document.querySelector('#screen1').className = ""
+    }
+  </script>
+
+</body>
+
+</html>
